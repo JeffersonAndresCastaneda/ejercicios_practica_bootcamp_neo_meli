@@ -1,0 +1,57 @@
+-- creacion de bd
+
+CREATE DATABASE ejercicio_boot_camp;
+
+-- utilizar bd
+
+USE ejercicio_boot_camp;
+
+-- creacion de tabla clientes
+
+CREATE TABLE clientes (
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL
+);
+
+-- creacion de tabla pedidos
+
+CREATE TABLE pedidos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_cliente INT,
+    total DECIMAL(10,2),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
+
+-- insercion de datos
+
+INSERT INTO clientes (nombre) VALUES
+('Juan Pérez'),
+('María Gómez'),
+('Carlos Ruiz');
+
+
+-- insercion de datos
+
+INSERT INTO pedidos (id_cliente, total) VALUES
+(1, 150.00),
+(1, 89.50),
+(2, 320.75),
+(3, 45.00),
+(2, 210.30);
+
+
+-- inner join entre clientes y pedidos
+
+SELECT c.id_cliente, c.nombre, p.id AS id_pedido, p.total
+FROM clientes c
+INNER JOIN pedidos p ON c.id_cliente = p.id_cliente
+WHERE p.total > 100;
+
+
+-- bonus group id gastaron + de 200
+
+SELECT c.id_cliente, c.nombre, SUM(p.total) AS total_gastado
+FROM clientes c
+INNER JOIN pedidos p ON c.id_cliente = p.id_cliente
+GROUP BY c.id_cliente, c.nombre
+HAVING SUM(p.total) > 200;
