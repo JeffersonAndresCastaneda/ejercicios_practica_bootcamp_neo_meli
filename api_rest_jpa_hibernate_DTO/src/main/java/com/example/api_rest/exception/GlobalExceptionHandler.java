@@ -13,8 +13,7 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Se activa automaticamente cada vez que algun metodo del controller
-    // (o del service, si el error sube hasta aqui) lanza ProductoNotFoundException.
+
     @ExceptionHandler(ProductoNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleProductoNotFound(ProductoNotFoundException ex) {
         ErrorResponse error = new ErrorResponse(
@@ -27,9 +26,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
-    // Se activa automaticamente cuando @Valid rechaza un ProductoRequestDTO
-    // (por ejemplo @NotBlank o @Positive fallando). Aqui armamos un mapa
-    // campo -> mensaje, para que el cliente sepa exactamente que corregir.
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationErrors(MethodArgumentNotValidException ex) {
         Map<String, String> errores = new HashMap<>();

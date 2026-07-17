@@ -5,9 +5,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "productos")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Producto {
 
     @Id
@@ -16,49 +28,18 @@ public class Producto {
 
     private String nombre;
 
-    private double precio;
+    private BigDecimal precio;
 
-    // JPA/Hibernate exige un constructor vacío: lo usa internamente
-    // (vía reflexion) para crear el objeto antes de rellenarlo con los datos de la fila.
-    public Producto() {
-    }
 
-    public Producto(Long id, String nombre, double precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Producto p)) return false;
+        return id != null && id.equals(p.id);
     }
 
     @Override
-    public String toString() {
-        return "Producto{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", precio=" + precio +
-                '}';
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }
