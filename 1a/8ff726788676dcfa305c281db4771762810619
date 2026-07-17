@@ -1,0 +1,41 @@
+api_rest_jpa_hibernate_DTO/src/main/java/com/example/api_rest/exception/GlobalExceptionHandler.java
+  h_f9955d2ea7fc95 16,29
+api_rest_jpa_hibernate_DTO/src/main/java/com/example/api_rest/controller/ProductoController.java
+  s_ca5f9f87e0d32c::t_263d669fe60106 9-16,18-21
+api_rest_jpa_hibernate_DTO/src/main/java/com/example/api_rest/dto/ProductoResponseDTO.java
+  s_ca5f9f87e0d32c::t_19e711a630d5d0 5-9
+  s_ca5f9f87e0d32c::t_e6be82daa5ba11 3
+api_rest_jpa_hibernate_DTO/src/main/java/com/example/api_rest/dto/ProductoRequestDTO.java
+  s_ca5f9f87e0d32c::t_ef1a27c05567ce 6
+  s_ca5f9f87e0d32c::t_f2a6ea5864c647 8-10,12-14
+api_rest_jpa_hibernate_DTO/src/main/java/com/example/api_rest/mapper/ProductoMapper.java
+  s_ca5f9f87e0d32c::t_2429067982a69b 2,11,16-17
+api_rest_jpa_hibernate_DTO/pom.xml
+  s_ca5f9f87e0d32c::t_6d7dc6e7c9536b 64-70
+api_rest_jpa_hibernate_DTO/src/main/java/com/example/api_rest/repository/ProductoRepository.java
+  s_ca5f9f87e0d32c::t_ce4e41b6b349cb 5,10-11
+api_rest_jpa_hibernate_DTO/src/main/java/com/example/api_rest/model/Producto.java
+  s_ca5f9f87e0d32c::t_7181e5c0f25c91 8-12,18-22
+  s_ca5f9f87e0d32c::t_812c5b1472196d 14,31,34-38,42-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1a8ff726788676dcfa305c281db4771762810619",
+  "prompts": {},
+  "humans": {
+    "h_f9955d2ea7fc95": {
+      "author": "Jefferson <yetogi0@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_ca5f9f87e0d32c": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1784306902515",
+        "model": "unknown"
+      },
+      "human_author": "Jefferson <yetogi0@gmail.com>"
+    }
+  }
+}
