@@ -14,11 +14,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * EJERCICIO 4 (Spring Boot Test).
- * Testeamos SOLO la capa web con @WebMvcTest + MockMvc + @MockBean.
- * El primer test está resuelto; completá el segundo.
- */
+
 @WebMvcTest(TareaController.class)
 class TareaControllerTest {
 
@@ -28,7 +24,7 @@ class TareaControllerTest {
     @MockBean
     TareaService service;
 
-    // ===== EJEMPLO RESUELTO =====
+
     @Test
     void GET_tareas_devuelve200yLaLista() throws Exception {
         when(service.listar()).thenReturn(List.of(
@@ -41,12 +37,7 @@ class TareaControllerTest {
                 .andExpect(jsonPath("$[0].completada").value(true));
     }
 
-    // ===== TODO 1: GET /tareas?pendientes=true debe usar listarPendientes() =====
-    // Pistas:
-    //   - when(service.listarPendientes()).thenReturn(List.of(new Tarea(2L, "Aprender Mockito", false)));
-    //   - mvc.perform(get("/tareas").param("pendientes", "true"))
-    //   - .andExpect(status().isOk())
-    //   - .andExpect(jsonPath("$[0].completada").value(false));
+
     @Test
     void GET_tareasPendientes_usaListarPendientes() throws Exception {
         when(service.listarPendientes()).thenReturn(List.of(
