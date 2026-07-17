@@ -1,0 +1,12 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "34c5d32e445e7443cae8dc7b757a89aac55a412d",
+  "prompts": {},
+  "humans": {
+    "h_f9955d2ea7fc95": {
+      "author": "Jefferson <yetogi0@gmail.com>"
+    }
+  }
+}
